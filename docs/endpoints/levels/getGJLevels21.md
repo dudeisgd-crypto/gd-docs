@@ -66,6 +66,9 @@ This endpoint is used to search levels by name and or filter
 | `27` | Sent                                                                                                                            |
 | `28` | GD Lite weekly levels                                                                                                           |
 | `29` | GD Lite bonus levels (platformer)                                                                                               |
+| `32` | Daily Level Recall (Demon Key purchase)                                                                                         |
+| `33` | Weekly Level Recall (Demon Key purchase)                                                                                        |
+| `34` | Event Level Recall (Demon Key purchase)                                                                                         |
 
 :::
 
