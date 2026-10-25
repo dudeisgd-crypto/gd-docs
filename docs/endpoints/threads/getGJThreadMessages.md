@@ -1,6 +1,6 @@
 # getGJThreadMessages.php
 
-Gets the messages in a thread. This endpoint has a cooldown of 20 messages per minute
+Gets the messages in a thread.
 
 ## Parameters
 
@@ -12,7 +12,9 @@ Gets the messages in a thread. This endpoint has a cooldown of 20 messages per m
 | `threadID`      | The ID of the thread to fetch messages from | Yes | <!--a-->
 | `beforeID`      | All fetched messages will be older than this message ID | | <!--a-->
 | `afterID`       | All fetched messages will be newer than this message ID | | <!--a-->
-| `mv`            | Unknown, but sent as 0 if this is a request that is refreshing the thread and not sent at all otherwise | | <!--a-->
+| `aroundID`      | All fetched messages will be around this message ID. Used when jumping to a message from search | |
+| `date`          |
+| `mv`            | Unknown. Only sent when refreshing the thread | |
 | `gameVersion`   | <ParamDesc name="gameVersion"/> |          | <!--a-->
 | `binaryVersion` | <ParamDesc name="binaryVersion"/> |          | <!--a-->
 | `udid`          | <ParamDesc name="udid"/> |          | <!--a-->
@@ -20,22 +22,22 @@ Gets the messages in a thread. This endpoint has a cooldown of 20 messages per m
 | `dvs`           | <ParamDesc name="dvs"/> |          | <!--a-->
 
 ## Response
-  
+
 A successful request will return the data in the format
 
 ```
-{messages}#{members}#{unk}#{invites}#{metadata}#{unk2}#{unk3}
+{messages}#{members}#{formerMembers}#{invites}#{metadata}#{lastMessageID}#{unk}
 ```
 
 where:
 
 - `{messages}` is a list of [Thread Message Objects](/resources/server/threadmessage) separated by pipes `|`. If no messages were fetched, this segment is returned as `none`
 - `{members}` is a list of [User Objects](/resources/server/user) of all the members, separated by pipes `|`
-- `{unk}` is unknown and always seems to be empty
+- `{formerMembers}` is a list of [Thread Former User Objects](/resources/server/user#thread-former-user-object) of members that left or were kicked, separated by pipes `|`
 - `{invites}` is a list of [Thread Invite User Objects](/resources/server/user#thread-invite-user-object) of all the users wh0 currently have pending invites, separated by pipes `|`
-- `{metadata}` is a [Thread Metadata Object](/resources/server/threadmessage)
-- `{unk2}` is unknown and always seems to be 0
-- `{unk3}` is unknown and always seems to be `3,1,10,50`. The `50` is likely how many messages can be loaded at once
+- `{metadata}` is a [Thread Metadata Object](/resources/server/thread#thread-metadata)
+- `{lastMessageID}` is the last message ID you can see before you were removed from the group thread. If you are still in the thread, it's set to 0
+- `{unk}` is unknown and always seems to be `3,1,10,50`. The `50` is likely how many messages can be loaded at once
 
 ## Example
 
@@ -52,7 +54,7 @@ data = {
     "accountID": 26068292, # GMDAntiMatter's account ID
     "gjp2": "********", # This would be GMDAntiMatter's password encoded with GJP2 encryption
     "secret": "Wmfd2893gb7",
-    "threadID": 77519  
+    "threadID": 77519
 }
 
 req = requests.post("https://www.boomlings.com/database/getGJThreadMessages.php", data=data)
