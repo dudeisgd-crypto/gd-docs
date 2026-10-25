@@ -80,7 +80,7 @@ Keys indicated with a dagger (†) were only returned from downloadGJLevel22 whe
 | 58  | unk | Unknown. Ignored in client code, unknown if ever sent by the server |
 | 62  | exactUploadTime | **Integer** | The Unix timestamp of when the level was uploaded
 | 63  | exactUpdateTime | **Integer** | The Unix timestamp of when the level was last updated
-| 65  | timelyID | **Integer** | The ID of this timely level. Subtract 100,000 if it's a weekly or 200,000 if it's an event. Returned only by [getGJLevels21](/endpoints/levels/getGJLevels21) with `type`s 32-34 |
+| 65  | timelyID | **Integer** | The ID of this timely level. Subtract 100,000 if it's a weekly or 200,000 if it's an event. If present, the timely level can be recalled. Returned only by [getGJLevels21](/endpoints/levels/getGJLevels21) with `type`s 32-34 |
 
 ### Trivia
 
@@ -93,4 +93,3 @@ Keys indicated with a dagger (†) were only returned from downloadGJLevel22 whe
 - Key `57` caps at the 24-bit integer limit so any time longer than around 465 hours won't be accurate
 
 - Keys `28` and `29` were originally formatted as absolute datetimes, with commas being used in place of colons as a time separator (`yyyy-MM-dd HH,mm`). Those commas would be replaced with colons during parsing. This was changed to relative timestamps during 2.0, with the character replacement being removed as well.
-- Key `65` is only returned by getGJLevels21 types `32`, `33` and `34`, to indicate Daily/Weekly/Event Recalls. If this parameter is not sent, the client doesn't render the demon key purchase button.
