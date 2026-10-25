@@ -4,17 +4,22 @@ Gets miscellaneous Geometry Dash-related info about a song
 
 ## Parameters
 
-| Parameter       | Explanation | Required |
-| --------------- | ----------- | -------- |
-| `songID`        | The newgrounds ID of the song you want information about | Yes      | <!--a-->
-| `secret`        | <ParamDesc name="secret" type="common"/> | Yes      | <!--a-->
-| `gameVersion`   | <ParamDesc name="gameVersion"/> |          | <!--a-->
-| `binaryVersion` | <ParamDesc name="binaryVersion"/> |          | <!--a-->
-| `udid`          | <ParamDesc name="udid"/> |          | <!--a-->
-| `uuid`          | <ParamDesc name="uuid"/> |          | <!--a-->
-| `dvs`           | <ParamDesc name="dvs"/> |          | <!--a-->
-| `accountID`     | <ParamDesc name="accountID"/> |          | <!--a-->
-| `gjp2`          | <ParamDesc name="gjp2"/> |          | <!--a-->
+<ParamGroup>
+
+| Parameter | Explanation |
+| --------- | ----------- |
+| `songID`<ParamInfo req="always"/> | The newgrounds ID of the song you want information about |
+| `secret`<ParamInfo req="always"/> | <ParamDesc name="secret" type="common"/> |
+| `gameVersion` | <ParamDesc name="gameVersion"/> |
+| `binaryVersion` | <ParamDesc name="binaryVersion"/> |
+| `udid` | <ParamDesc name="udid"/> |
+| `uuid` | <ParamDesc name="uuid"/> |
+| `dvs` | <ParamDesc name="dvs"/> |
+| `accountID` | <ParamDesc name="accountID"/> |
+| `gjp2` | <ParamDesc name="gjp2"/> |
+
+<ParamInfoFooter/>
+</ParamGroup>
 
 ## Response
 
@@ -22,7 +27,7 @@ Gets miscellaneous Geometry Dash-related info about a song
   - Amount of levels that use the song as the main one
   - Amount of rated levels that use the song as the main one
   - Total amount of downloads on all the rated levels with the song
-  
+
 Then, separated by a `#`, the groupings of which difficulties use the song. The groupings have 3 values each, which are separated by `:`. The groupings are separated by a pipe (`|`).
   - Rating: 0 for rated, 1 for featured, 2 for epic, 3 for legendary, 4 for mythic
   - Difficulty: 0 for Auto, 1 for Easy, 2 for Normal, 3 for Hard, 4 for Harder, 5 for Insane, 6 for Demon

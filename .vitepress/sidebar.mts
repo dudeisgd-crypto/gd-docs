@@ -30,6 +30,10 @@ export default [
             "link": "/endpoints/accounts/loginGJAccount"
           },
           {
+            "text": "openedRegister.php",
+            "link": "/endpoints/accounts/openedRegister"
+          },
+          {
             "text": "registerGJAccount.php",
             "link": "/endpoints/accounts/registerGJAccount"
           },
@@ -74,6 +78,28 @@ export default [
           {
             "text": "uploadGJComment21.php",
             "link": "/endpoints/comments/uploadGJComment21"
+          }
+        ],
+        "collapsed": true
+      },
+      {
+        "text": "Sound Packs",
+        "items": [
+          {
+            "text": "deleteGJEditorSound.php",
+            "link": "/endpoints/editorsfx/deleteGJEditorSound"
+          },
+          {
+            "text": "downloadGJEditorSound.php",
+            "link": "/endpoints/editorsfx/downloadGJEditorSound"
+          },
+          {
+            "text": "getGJEditorSounds.php",
+            "link": "/endpoints/editorsfx/getGJEditorSounds"
+          },
+          {
+            "text": "uploadGJEditorSound.php",
+            "link": "/endpoints/editorsfx/uploadGJEditorSound"
           }
         ],
         "collapsed": true
@@ -367,6 +393,40 @@ export default [
         "collapsed": true
       },
       {
+        "text": "Threads",
+        "items": [
+          {
+            "text": "getGJThreadInvites.php",
+            "link": "/endpoints/threads/getGJThreadInvites"
+          },
+          {
+            "text": "getGJThreadMembers.php",
+            "link": "/endpoints/threads/getGJThreadMembers"
+          },
+          {
+            "text": "getGJThreadMessages.php",
+            "link": "/endpoints/threads/getGJThreadMessages"
+          },
+          {
+            "text": "getGJThreads.php",
+            "link": "/endpoints/threads/getGJThreads"
+          },
+          {
+            "text": "searchGJThreadMessages.php",
+            "link": "/endpoints/threads/searchGJThreadMessages"
+          },
+          {
+            "text": "sendGJThreadMessage.php",
+            "link": "/endpoints/threads/sendGJThreadMessage"
+          },
+          {
+            "text": "updateGJThread.php",
+            "link": "/endpoints/threads/updateGJThread"
+          }
+        ],
+        "collapsed": true
+      },
+      {
         "text": "Users",
         "items": [
           {
@@ -560,7 +620,7 @@ export default [
             "link": "/resources/server/comment"
           },
           {
-            "text": "Editor SFX Pack Object",
+            "text": "Sound Pack Object",
             "link": "/resources/server/editorsfx"
           },
           {
@@ -673,6 +733,10 @@ export default [
       {
         "text": "CDN Tokens",
         "link": "/topics/cdn_token"
+      },
+      {
+        "text": "Custom Error Messages",
+        "link": "/topics/custom_error"
       },
       {
         "text": "GJP",

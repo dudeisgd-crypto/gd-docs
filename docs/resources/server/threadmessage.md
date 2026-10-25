@@ -27,13 +27,17 @@ System Messages are messages that do not have an author attached, and appear as 
 The values are:
 
 - Type of system message:
+  - 1 - new user added (user1 - the user who added them, user2 - the user that was added). May be unused, or only limited to moderators
   - 2 - new user joined (user1 - the user who invited them, user2 - the user who joined)
-  - 3 - user left (user1 - the user who left) 
-  - 4 - user kicked (user1 - the user who did the kick, user2 - the user that was kicked)  
+  - 3 - user left (user1 - the user who left)
+  - 4 - user kicked (user1 - the user who did the kick, user2 - the user that was kicked)
   - 5 - ownership transferred (user1 - the previous owner, user2 - the new owner)
   - 6 - user invited (user1 - the inviter, user2 - the user that was invited)
   - 7 - description was changed (user1 - the user who changed the description)
   - 8 - thread was renamed (user1 - the user who renamed the thread)
+  - 9 - conversation started by advisor (user1 - the advisor who started the conversation)
+  - 10 - conversation started by moderator (user1 - the moderator who started the conversation)
+  - 11 - conversation was closed (user1 - the user who closed the conversation, not necessarily specified)
 - User 1 Account ID. User 1 is not specified for type 5 if the ownership was transferred as a result of the previous owner leaving
 - User 1 Username
 - User 2 Account ID. User 2 is not specified for types 3, 7 and 8
